@@ -1,0 +1,16 @@
+function solution(w, h) {
+    //최대공약수 구하는 함수
+    function gcd(w,h){
+        let mod=w%h;
+        if(mod==0){
+            return h;
+        }else{
+            return gcd(h,mod);
+        }
+    }
+
+    //대각선을 지나는 사각형 개수
+    let sub=w+h-gcd(w,h);
+    var answer = w*h-sub;
+    return answer;
+}
