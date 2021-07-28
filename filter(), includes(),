@@ -1,0 +1,12 @@
+function solution(lottos, win_nums) {
+    const answer = [];
+    //lottos의 값들이 n, filter 인자로 n을 줌, includes() 함수로 win_nums에 있으면 return,
+    // length로 길이 구함
+    const min = lottos.filter(n => win_nums.includes(n)).length;
+    const max = lottos.filter(n => n === 0).length + min;
+
+    max > 1 ? answer.push(7 - max) : answer.push(6);
+    min > 1 ? answer.push(7 - min) : answer.push(6);
+
+    return answer;
+}
