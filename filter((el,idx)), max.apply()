@@ -1,0 +1,20 @@
+//프로그래머스 모의고사
+function solution(answers) {
+    var answer = [];
+    let score =[0,0,0];
+    const a=[1,2,3,4,5];
+    const b=[2, 1, 2, 3, 2, 4, 2, 5];
+    const c=[ 3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+    //filter 쓰면 유효성도 Ok
+    //el,i는 각각 element와 index
+    score[0]=answers.filter((el,i)=>el===a[i%5]).length;
+    score[1]=answers.filter((el,i)=>el===b[i%8]).length;
+    score[2]=answers.filter((el,i)=>el===c[i%10]).length;
+    
+    for(let i=0;i<3;i++){
+        //배열에서 최댓값 찾기
+        if(score[i]==Math.max.apply(null,score)) answer.push(i+1);
+    }
+
+    return answer.sort((a,b)=>a-b);
+}
