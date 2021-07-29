@@ -1,0 +1,16 @@
+//프로그래머스 타겟 넘버
+function solution(numbers, target) {
+    function dfs(depth, sum) {
+        if (depth === numbers.length) {
+            if (sum === target) {
+                answer += 1;
+        }
+        return;
+    }
+    dfs(depth + 1, sum + numbers[depth]); // 왼쪽
+    dfs(depth + 1, sum - numbers[depth]); // 오른쪽
+  }
+  let answer = 0;
+  dfs(0, 0);
+  return answer;
+}
