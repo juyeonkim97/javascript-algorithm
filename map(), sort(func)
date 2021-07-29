@@ -1,0 +1,15 @@
+//프로그래머스 - K번째 수
+function solution(array, commands) {
+    let answer = [];
+    //commands 값 하나씩 빼서 쓰기, map()
+    commands.map(command=>{
+        let tmpArr=[];
+        const [i,j,k]=command;
+        if(j==array.length){
+            //숫자 정렬 정확하게 할 때 sort()에 함수 적용하기
+            answer.push(array.slice(i-1,j+1).sort((i,j) => i - j)[k-1]);
+        }else
+            answer.push(array.slice(i-1,j).sort((i,j) => i - j)[k-1]);
+    })
+    return answer;
+}
