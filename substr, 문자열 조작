@@ -1,0 +1,21 @@
+//프로그래머스 영어 끝말잇기
+function solution(n, words) {
+    var answer = [];
+    let pass=[];
+    let last=words[0].substr(0,1);
+    for(let i=0;i<words.length;i++){
+        if(pass.includes(words[i]) || last!=words[i].substr(0,1)){
+            answer[0]=i%n+1;(i+1)/n;
+            answer[1]=Math.ceil((i+1)/n);
+            break;
+        }else{
+            last=words[i].substr(words[i].length-1,1);
+            pass.push(words[i]);
+        } 
+            
+    }
+    if(words.length===pass.length){
+        answer=[0,0];
+    }
+    return answer;
+}
