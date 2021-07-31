@@ -1,0 +1,15 @@
+//프로그래머스 124 나라의 숫자
+function solution (n) {
+  var answer = '';  //최종적으로 124 나라법으로 표현될 숫자를 문자열로 return한다.
+  var num = ['4','1','2'];
+  let radius=0;
+  while(n > 0) {
+    radius=n%3
+    n = parseInt(n/3); 
+    if(radius === 0) {
+      n = n - 1; 
+    }
+    answer = num[radius] + answer;//거꾸로 출력할 게 아니라 넣을 때 이렇게,,,
+  }
+return answer;
+}
