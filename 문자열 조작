@@ -1,0 +1,20 @@
+//프로그래머스 튜플
+function solution(s) {
+    var answer = new Set();
+    s=s.replace('{{','{');
+    s=s.replace('}}','}');
+    let sArr=s.split('},{');
+    sArr[0]=sArr[0].replace('{','')
+    sArr[sArr.length-1]=sArr[sArr.length-1].replace('}','')
+    sArr.sort((x,y)=>x.length-y.length)
+    sArr.map((arr)=>{
+        arr=arr.split(',');
+        arr.map(a=>{
+            a=parseInt(a)
+            if(!answer.includes(a)){
+                answer.push(a)
+            }
+        })
+    })
+    return answer;
+}
