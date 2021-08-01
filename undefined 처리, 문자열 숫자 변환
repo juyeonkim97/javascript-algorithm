@@ -1,0 +1,31 @@
+//프로그래머스 숫자 문자열과 영단어
+function solution(s) {
+    let answer = '';
+    const numStr={
+        zero:0,
+        one:1,
+        two:2,
+        three:3,
+        four:4,
+        five:5,
+        six:6,
+        seven:7,
+        eight:8,
+        nine:9
+    }
+    let str='';
+    const sArr=s.split('');
+    for(let i=0;i<sArr.length;i++){
+        if(isNaN(sArr[i])){//숫자가 아니면
+            str+=sArr[i]; //str을 만들고
+            //console.log(numStr['nin'])//숫자 아니면 undefined==true
+            if(numStr[str]!=undefined){//undefined가 아니면
+                answer+=numStr[str];
+                str='';
+            }
+        }else{
+            answer+=sArr[i]
+        }
+    }
+    return parseInt(answer);
+}
