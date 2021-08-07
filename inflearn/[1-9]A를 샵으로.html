@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer=s;
+                /*
+                    문자열 치환
+                    - replace 정규식 사용(/바꾸고자하는문자열/g)
+                */
+                answer=answer.replace(/A/g, "#");
+                return answer;
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

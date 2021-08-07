@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer="";
+                sCopy=s.split('');
+                s.split('').map(ch=>{
+                    if(sCopy.filter(a=>a===ch).length>=2) sCopy.splice(sCopy.indexOf(ch),1);
+                })
+                answer=sCopy.join(''); //문자 배열 문자열로 만들기
+                return answer;
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>
